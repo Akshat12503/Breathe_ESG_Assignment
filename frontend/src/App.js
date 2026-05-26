@@ -13,7 +13,7 @@ function App() {
   }, []);
 
   const fetchActivities = () => {
-    fetch('http://127.0.0.1:8000/api/activities/')
+      fetch('https://breathe-esg-backend-elfv.onrender.com/api/activities/')
       .then((res) => {
         if (!res.ok) throw new Error('Failed to connect to the ESG data gateway.');
         return res.json();
@@ -30,7 +30,7 @@ function App() {
 
   // Sign-off endpoint trigger
   const handleApprove = (id) => {
-    fetch(`http://127.0.0.1:8000/api/activities/${id}/approve/`, {
+    fetch(`https://breathe-esg-backend-elfv.onrender.com/api/activities/${id}/approve/`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
     })
